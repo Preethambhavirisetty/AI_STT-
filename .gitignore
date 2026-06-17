@@ -1,0 +1,14 @@
+.DS_Store
+.git.broken-*/
+
+# Python/backend runtime files
+backend/.venv/
+backend/__pycache__/
+backend/**/*.py[cod]
+backend/.env
+backend/data/
+backend/chroma_data/
+
+# Frontend dependencies/build output
+frontend/node_modules/
+frontend/dist/

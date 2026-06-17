@@ -1,0 +1,36 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      APP_TITLE: "Mikey Chatbot API"
+      OLLAMA_MODEL: "llama3.1:latest"
+      OLLAMA_BASE_URL: "http://ollama:11434"
+      EMBED_MODEL: "nomic-embed-text:latest"
+      DATABASE_PATH: "/app/data/mikey.sqlite3"
+      CHROMA_PATH: "/app/chroma_data"
+      REQUIRE_AUTH: "true"
+      API_KEY: "${API_KEY:?Set API_KEY before starting docker compose}"
+      RATE_LIMIT_REQUESTS: "120"
+      RATE_LIMIT_WINDOW_SECONDS: "60"
+      CORS_ORIGINS: '["http://localhost:5173","http://127.0.0.1:5173","http://localhost:3000"]'
+    volumes:
+      - api_data:/app/data
+      - chroma_data:/app/chroma_data
+    depends_on:
+      - ollama
+    restart: unless-stopped
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+volumes:
+  api_data:
+  chroma_data:
+  ollama_data:

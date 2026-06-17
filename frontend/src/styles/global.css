@@ -1,0 +1,40 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --orange:        #FF6B2C;
+  --orange-2:      #FF9152;
+  --orange-grad:   linear-gradient(135deg, #FF6B2C 0%, #FF9152 100%);
+  --orange-glow:   0 4px 20px rgba(255,107,44,0.30);
+
+  --bg:            #F7F7F8;
+  --sidebar-bg:    #FFFFFF;
+  --surface:       #FFFFFF;
+  --border:        #EBEBEB;
+  --border-2:      #E0E0E0;
+
+  --text:          #111111;
+  --text-2:        #555555;
+  --text-3:        #AAAAAA;
+
+  --radius-s:      8px;
+  --radius-m:      14px;
+  --radius-l:      20px;
+  --radius-pill:   999px;
+
+  --shadow-s: 0 1px 4px rgba(0,0,0,0.06);
+  --shadow-m: 0 2px 16px rgba(0,0,0,0.08);
+  --shadow-l: 0 4px 32px rgba(0,0,0,0.10);
+}
+
+html, body, #root { height: 100%; width: 100%; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+button { font-family: inherit; cursor: pointer; border: none; background: none; outline: none; }
+button:disabled { cursor: not-allowed; opacity: 0.4; }
+textarea, input { font-family: inherit; border: none; outline: none; background: none; resize: none; }
