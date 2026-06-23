@@ -1,29 +1,38 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --orange:        #FF6B2C;
-  --orange-2:      #FF9152;
-  --orange-grad:   linear-gradient(135deg, #FF6B2C 0%, #FF9152 100%);
-  --orange-glow:   0 4px 20px rgba(255,107,44,0.30);
+  --orange:        #E85D2A;
+  --orange-2:      #FF9A5F;
+  --orange-grad:   linear-gradient(135deg, #E85D2A 0%, #FF9A5F 100%);
+  --orange-glow:   0 12px 28px rgba(232,93,42,0.24);
 
-  --bg:            #F7F7F8;
+  --bg:            #F5F3EF;
   --sidebar-bg:    #FFFFFF;
   --surface:       #FFFFFF;
-  --border:        #EBEBEB;
-  --border-2:      #E0E0E0;
+  --surface-2:     #FAF9F6;
+  --border:        #E7E1D8;
+  --border-2:      #D9D0C4;
 
-  --text:          #111111;
-  --text-2:        #555555;
-  --text-3:        #AAAAAA;
+  --text:          #171514;
+  --text-2:        #5D5650;
+  --text-3:        #9B9288;
+
+  --font-serif:    'Fraunces', 'Georgia', serif;
+
+  --navy:          #1D2826;
+  --navy-2:        #111817;
+  --navy-card:     #24302E;
+  --navy-text:     #F7F4ED;
+  --navy-text-2:   rgba(247,244,237,0.68);
 
   --radius-s:      8px;
   --radius-m:      14px;
   --radius-l:      20px;
   --radius-pill:   999px;
 
-  --shadow-s: 0 1px 4px rgba(0,0,0,0.06);
-  --shadow-m: 0 2px 16px rgba(0,0,0,0.08);
-  --shadow-l: 0 4px 32px rgba(0,0,0,0.10);
+  --shadow-s: 0 1px 3px rgba(31,24,18,0.06);
+  --shadow-m: 0 10px 30px rgba(31,24,18,0.08);
+  --shadow-l: 0 24px 70px rgba(31,24,18,0.12);
 }
 
 html, body, #root { height: 100%; width: 100%; }
@@ -33,6 +42,7 @@ body {
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 button { font-family: inherit; cursor: pointer; border: none; background: none; outline: none; }

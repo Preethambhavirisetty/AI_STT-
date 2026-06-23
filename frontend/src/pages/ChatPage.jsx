@@ -126,7 +126,7 @@ export default function ChatPage() {
           {showGreeting ? (
             <div className="greeting">
               <div className="sparkle">
-                <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
                   <path d="M12 2l2.2 6.6L21 11l-6.8 2.4L12 20l-2.2-6.6L3 11l6.8-2.4L12 2z" fill="url(#sparkleGrad)"/>
                   <defs>
                     <linearGradient id="sparkleGrad" x1="3" y1="2" x2="21" y2="20">
@@ -136,8 +136,46 @@ export default function ChatPage() {
                   </defs>
                 </svg>
               </div>
-              <h1 className="greet-headline">Where should we start?</h1>
-              <p className="greet-sub">{greeting}, {displayName}</p>
+              <h1 className="greet-headline">Speak Naturally,<br/>Let Mikey Handle the Rest</h1>
+              <p className="greet-sub">{greeting}, {displayName} — turn voice and text into clear, actionable answers.</p>
+
+              <div className="quick-actions" aria-label="Suggested prompts">
+                <button className="quick-action" onClick={() => handleSend('Transcribe my last recording')}>
+                  <span className="quick-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 3a3 3 0 00-3 3v6a3 3 0 006 0V6a3 3 0 00-3-3z" stroke="currentColor" strokeWidth="1.8"/>
+                      <path d="M19 11a7 7 0 01-14 0M12 18v3M8 21h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                    </svg>
+                  </span>
+                  <span>
+                    <strong>Transcribe audio</strong>
+                    <small>Turn a recording into clean text</small>
+                  </span>
+                </button>
+                <button className="quick-action" onClick={() => handleSend('Summarize what we discussed so far')}>
+                  <span className="quick-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M8 6h13M8 12h13M8 18h9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                      <path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/>
+                    </svg>
+                  </span>
+                  <span>
+                    <strong>Summarize notes</strong>
+                    <small>Extract decisions and next steps</small>
+                  </span>
+                </button>
+                <button className="quick-action" onClick={() => handleSend('What can you help me with?')}>
+                  <span className="quick-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 1117 0z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                  <span>
+                    <strong>Ask Mikey</strong>
+                    <small>Start with an open question</small>
+                  </span>
+                </button>
+              </div>
             </div>
           ) : (
             <div className="messages">
